@@ -42,7 +42,7 @@ typedef union input { // Used soley for the odd output/easier reference
 int pop_head(node_t* head);
 void clean_ll(node_t* head);
 int main(int argc, char ** argv);
-void encryption(node_t* head, int len);
+void idek(node_t* head, int len);
 
 int main(int argc, char ** argv) {
     int amt = MAX - 1;
@@ -98,13 +98,13 @@ LOOP: // The conditional for the loop
         goto append;
     }
     // Exit the loop
-    encryption(head, temp); // 1st key
+    idek(head, temp); // 1st key
 
     // The below is just so that the two function calls aren't directly one after the other.
     int j = 0;
     input_t s = {0};
     cur = head->next;
-    encryption(head, temp + 1); // 2nd key
+    idek(head, temp + 1); // 2nd key
 
     while(cur != NULL) { // Extract the "encrypted" input from the linkedlist
         int val = (int)(*(long *)cur >> 32);
